@@ -15,7 +15,7 @@ def readb64(uri):
    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
    return img
 
-def Upscale(uri,scale=2):
+def Upscale(uri,scale=3):
     sr = dnn_superres.DnnSuperResImpl_create()
     image =  readb64(uri)#cv2.imread('/content/drive/MyDrive/Colab Notebooks/img upscaler/image.jpg')
     sr.readModel(f"EDSR_x{scale}.pb")#path for model
@@ -36,7 +36,7 @@ def home():
 def upsclaeImage():
     input_json=request.get_json(force=True)
     uri=input_json['imguri']
-    scale=input_json['scale']
+    scale=3#input_json['scale']
     return jsonify({"image":Upscale(uri=uri,scale=scale)});
 
 @app.route('/test' , methods=['GET','POST'])
