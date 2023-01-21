@@ -1,5 +1,5 @@
-from flask import Flask, render_template , request , jsonify
-import os , io , sys
+from flask import Flask , request , jsonify
+import os , sys
 import numpy as np 
 import base64
 import cv2
