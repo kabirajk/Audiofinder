@@ -1,5 +1,5 @@
 from flask import Flask, render_template , request , jsonify
-from PIL import Image
+# from PIL import Image
 import os , io , sys
 import numpy as np 
 import base64
@@ -57,5 +57,5 @@ def after_request(response):
 def about():
     return 'About'
 
-# if __name__ == '__main__':
-# 	app.run(debug = True)
+if __name__ == '__main__':
+	    app.run(host="0.0.0.0", port=int("5000"), debug=True)
